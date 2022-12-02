@@ -1,0 +1,39 @@
+<app-menu></app-menu>
+<main>
+    <div class="banner">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <app-form-reserva></app-form-reserva>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr style="height: 3px; background: black;">
+    <h1 class="text-center" style="margin: 1em;">HABITACIONES</h1>
+    <hr style="height: 3px; background: black;">
+    <section>
+        <div class="container" style="padding: 2em;">
+            <div class="row row-cols-1 row-cols-md-4">
+                <div class="col" *ngFor="let habitacion of habitaciones">
+                    <div class="card tarjetaHabitaciones" style="width: 18rem;">
+                        <img src={{habitacion.fotografias[0]}} class="card-img-top" alt="...">
+                        <div class="card-body" style="background-color: rgb(68, 0, 255);">
+                          <h3 class="card-title" style="color: white;">{{habitacion.nombre}}</h3>
+                          <p class="card-text" style="color: white;">{{habitacion.descripcion}}</p>
+                          <h5 style="color: white;">Valor por noche: <br> $ {{habitacion.valorNoche}} COP</h5>
+                          <h6 style="color: white;">Numero maximo de personas: {{habitacion.numeroMaximoPersonas}}</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <hr style="height: 3px; background: black;">
+    <section>
+        <app-descripcion>
+
+        </app-descripcion>
+    </section>
+</main>
+<app-footer></app-footer>
